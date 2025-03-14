@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+    </head>
+    <body>
+        <h1>WebSocket Chat</h1>
+        <!-- Display the current user's username -->
+        <h2>Current User: <span id="currentUserName"></span></h2>
+        <!-- Form to send messages -->
+        <form id="chatForm">
+            <input type="text" id="messageText" placeholder="Enter message" autocomplete="off"/>
+            <button type="submit">Send</button>
+        </form>
+        <!-- List to display messages -->
+        <ul id="messages"></ul>
+        <!-- Include the JavaScript file for WebSocket handling -->
+        <script src="/static/index.js"></script>
+    </body>
+</html>
