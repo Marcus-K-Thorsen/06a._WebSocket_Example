@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentUsername = document.getElementById("currentUserName");
 
     let ws;
+    let isUsernameMissing = true;
 
     function connectWebSocket() {
         const wsUrl = "ws://localhost:8000/ws";
@@ -14,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const message = document.createElement('li');
             const data = JSON.parse(event.data);
             // Update the current username display
-            currentUsername.innerHTML = data.username;
+            if (isUsernameMissing) {
+                currentUsername.innerHTML = data.username;
+                isUsernameMissing = false;
+            }
             // Display the received message with the sender's username in bold
             const messageText = `<b>${data.username}:</b> ${data.message}`;
             message.innerHTML = messageText;
