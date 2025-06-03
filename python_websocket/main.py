@@ -22,7 +22,7 @@ async def serve_root_page():
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    # Accept the WebSocket connection
+    # IMPORTANT: Accept the WebSocket connection
     await connection_manager.connect(websocket)
     try:
         while True:

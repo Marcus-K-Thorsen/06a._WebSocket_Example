@@ -22,7 +22,7 @@ class ConnectionManager:
         self.connection_count: int = 0
     
     async def connect(self, websocket: WebSocket):
-        # Accept the WebSocket connection
+        # IMPORTANT: Accept the WebSocket connection
         await websocket.accept()
         # Increment the connection count and generate a unique username
         self.connection_count += 1
